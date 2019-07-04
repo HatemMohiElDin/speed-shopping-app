@@ -1,0 +1,40 @@
+li{
+    color: rgb(68, 2, 99);
+    font-size: 1.6em;
+}
+.btn-bg-color{
+    background-color: #fff;
+}
+
+
+h3{
+    color: rgb(68, 2, 99)
+}
+
+table{
+    width: 100%;
+    font-size: 1.6em;
+    color: rgb(68, 2, 99);
+    
+}
+td{
+
+    border: 2px solid beige;
+}
+
+.jumbotron{
+    margin:0;
+    background-color: rgb(236, 172, 93);
+    justify-content: center;
+    align-content: center;
+    text-align: center
+}
+
+.jumbotron > h1{
+    color: rgb(68, 2, 99)
+}
+
+.btn-sm{
+    background-color: rgb(68, 2, 99);
+    border: none
+}

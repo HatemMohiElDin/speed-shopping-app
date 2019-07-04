@@ -1,0 +1,8 @@
+diaryItems:['milk','yogurt','cheese','eggs','cream','creme fresh'],
+      
+veggieItems:['tomatoes','cucumber','salad','carrots','mushrooms','onions',
+      'garlic','lemon','peppers','coliflower','apples','pears','watermelon','grapes',
+      'oranges','mandarins'],
+
+meatItems:['lövbiff', 'köttfärs', 'högrev','francyska', 'korv','kalkon','kyclling'],
+      
