@@ -1,40 +1,41 @@
-li{
-    color: rgb(68, 2, 99);
-    font-size: 1.6em;
+li {
+  color: rgb(68, 2, 99);
+  font-size: 1.6em;
 }
-.btn-bg-color{
-    background-color: #fff;
-}
-
-
-h3{
-    color: rgb(68, 2, 99)
+.btn-bg-color {
+  background-color: #fff;
 }
 
-table{
-    width: 100%;
-    font-size: 1.6em;
-    color: rgb(68, 2, 99);
-    
-}
-td{
+h3 {
+  color: white;
 
-    border: 2px solid beige;
+  background: red;
+  padding: 5px;
 }
 
-.jumbotron{
-    margin:0;
-    background-color: rgb(236, 172, 93);
-    justify-content: center;
-    align-content: center;
-    text-align: center
+table {
+  width: 100%;
+  font-size: 1.6em;
+  color: rgb(68, 2, 99);
+}
+td {
+  border: 2px solid beige;
 }
 
-.jumbotron > h1{
-    color: rgb(68, 2, 99)
+.jumbotron {
+  margin: 0;
+  background-color: rgb(236, 172, 93);
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 
-.btn-sm{
-    background-color: rgb(68, 2, 99);
-    border: none
+.jumbotron > h1 {
+  color: white;
+}
+
+.btn-sm {
+  background-color: rgb(221, 19, 63);
+  border: 1px solid white;
+  color: white;
 }
