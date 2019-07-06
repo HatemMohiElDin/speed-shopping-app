@@ -40,7 +40,17 @@
   <hr>
         </div>-->
         <div>
-          <app-veggie :userVeggie="userVeggie"></app-veggie>
+          <app-veggie :userVeggie="userVeggie">
+            <div slot="veggie">
+              <h3>Veggies and Fruit</h3>
+              <div v-for="(item, index) in userVeggie" :key="item.id">
+                <li>
+                  {{item}}
+                  <i @click="removeItem(userVeggie, index)" class="fa fa-check"></i>
+                </li>
+              </div>
+            </div>
+          </app-veggie>
           <app-bread :userBread="userBread"></app-bread>
           <app-diary :userDiary="userDiary"></app-diary>
           <app-meat :userMeat="userMeat"></app-meat>
@@ -202,6 +212,10 @@ export default {
         }
       });
       this.userList = [];
+    },
+
+    removeItem(index) {
+      this.userVeggie.splice(index, 1);
     }
   }
 };
@@ -209,24 +223,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style >
+body {
+  background: rgba(231, 112, 112, 0.548);
+}
 .jumbotron {
-  padding: 0;
-  background: white;
+  max-width: 600px;
+  margin: 30px auto;
+  padding-top: 5px;
   border: 1px solid red;
+  background-image: linear-gradient(120deg, rgb(216, 32, 32), white);
+
   color: white;
 }
 
 h1 {
   width: 100%;
-  background: red;
   padding-bottom: 10px;
   margin: 0;
-}
-
-.topper {
-  padding: 0;
-  margin: 0;
-  background: red;
 }
 
 .form-control {
