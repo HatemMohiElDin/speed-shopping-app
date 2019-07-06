@@ -30,34 +30,122 @@
           <hr />
         </div>
 
-        <!-- <input v-model="userInput" v-on:keyup.enter="addItem" type="text">  
-    <button  @click="addItem">Add</button>
-    <ul>
-      <li v-for="item in userList" :key="item.id"> {{item}} </li>
-    </ul>
-
-  <button @click="sortItems">Sort Items</button>
-  <hr>
-        </div>-->
         <div>
-          <app-veggie :userVeggie="userVeggie">
-            <div slot="veggie">
-              <h3>Veggies and Fruit</h3>
-              <div v-for="(item, index) in userVeggie" :key="item.id">
-                <li>
-                  {{item}}
-                  <i @click="removeItem(userVeggie, index)" class="fa fa-check"></i>
-                </li>
-              </div>
+          <div class="hygiene">
+            <h3>Hygiene</h3>
+            <div v-for="(item, index) in userHygiene" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userHygiene)" class="fa fa-check"></i>
+              </li>
             </div>
-          </app-veggie>
-          <app-bread :userBread="userBread"></app-bread>
-          <app-diary :userDiary="userDiary"></app-diary>
-          <app-meat :userMeat="userMeat"></app-meat>
-          <app-frozen :userFrozen="userFrozen"></app-frozen>
+          </div>
+          <div class="baby">
+            <h3>Baby stuff</h3>
+            <div v-for="(item, index) in userBaby" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userBaby)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Colonial">
+            <h3>Colonial</h3>
+            <div v-for="(item, index) in userColonial" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userColonial)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Worldfood">
+            <h3>World food and Spices</h3>
+            <div v-for="(item, index) in userWorldfood" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userWorldfood)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="veggie">
+            <h3>Veggies and Fruit</h3>
+            <div v-for="(item, index) in userVeggie" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userVeggie)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Bread">
+            <h3>Bread</h3>
+            <div v-for="(item, index) in userBread" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userBread)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Diary">
+            <h3>Diary</h3>
+            <div v-for="(item, index) in userDiary" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userDiary)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Cheese">
+            <h3>Cheese</h3>
+            <div v-for="(item, index) in userCheese" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userCheese)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Meat">
+            <h3>Meats</h3>
+            <div v-for="(item, index) in userMeat" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userMeat)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Polagg">
+            <h3>Pålägg</h3>
+            <div v-for="(item, index) in userPolagg" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userPolagg)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Drinks">
+            <h3>Drinks</h3>
+            <div v-for="(item, index) in userDrinks" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userDrinks)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+          <div class="Frozen">
+            <h3>Frozen</h3>
+            <div v-for="(item, index) in userFrozen" :key="item.id">
+              <li>
+                {{item}}
+                <i @click="removeItem(index, userFrozen)" class="fa fa-check"></i>
+              </li>
+            </div>
+          </div>
+
           <div>
-            <h2>Other</h2>
-            <li v-for="item in userOther" :key="item.id">{{item}}</li>
+            <h3>Other</h3>
+            <li v-for="(item, index) in userOther" :key="item.id">
+              {{item}}
+              <i @click="removeItem(index, userOther)" class="fa fa-check"></i>
+            </li>
           </div>
         </div>
       </div>
@@ -84,7 +172,8 @@ export default {
         "grädde",
         "creme fresh",
         "filmjölk",
-        "gräddfil"
+        "gräddfil",
+        "yoggi"
       ],
       veggieItems: [
         "tomat",
@@ -204,8 +293,22 @@ export default {
           this.userMeat.push(item);
         } else if (this.breadItems.includes(item)) {
           this.userBread.push(item);
+        } else if (this.babyItems.includes(item)) {
+          this.userBaby.push(item);
+        } else if (this.hygieneItems.includes(item)) {
+          this.userHygiene.push(item);
+        } else if (this.cheeseItems.includes(item)) {
+          this.userCheese.push(item);
+        } else if (this.colonialItems.includes(item)) {
+          this.userColonial.push(item);
+        } else if (this.drinksItems.includes(item)) {
+          this.userDrinks.push(item);
         } else if (this.frozenItems.includes(item)) {
           this.userFrozen.push(item);
+        } else if (this.polaggItems.includes(item)) {
+          this.userPolagg.push(item);
+        } else if (this.worldfoodItems.includes(item)) {
+          this.userWorldfood.push(item);
         } else {
           alert(`${item} added to Other`);
           this.userOther.push(item);
@@ -214,8 +317,8 @@ export default {
       this.userList = [];
     },
 
-    removeItem(index) {
-      this.userVeggie.splice(index, 1);
+    removeItem: (index, name) => {
+      name.splice(index, 1);
     }
   }
 };
