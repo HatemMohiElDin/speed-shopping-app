@@ -325,7 +325,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
+<style scoped>
 body {
   background: rgba(231, 112, 112, 0.548);
 }

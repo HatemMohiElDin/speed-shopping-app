@@ -38,10 +38,6 @@ td {
   text-align: center;
 }
 
-.jumbotron > h1 {
-  color: white;
-}
-
 .btn-sm {
   background-color: rgb(221, 19, 63);
   border: 1px solid white;

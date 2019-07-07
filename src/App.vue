@@ -1,12 +1,12 @@
 <template>
   <div>
-    <app-item v-if="!landing"></app-item>
+    <app-item v-if="maxi"></app-item>
     <app-willys v-if="willys"></app-willys>
     <div class="landing">
-      <div v-if="landing" @click="toggleLanding" class="maxi" :class="{maxihover: show}"></div>
+      <div v-if="landing" @click="toggleMaxi" class="maxi" :class="{maxihover: show}"></div>
       <div
         v-if="landing"
-        @click="toggleLanding"
+        @click="toggleWillys"
         class="willys"
         @mouseover="toggleShow"
         @mouseleave="toggleShow"
@@ -41,7 +41,12 @@ export default {
       this.landing = !this.landing;
     },
     toggleWillys() {
+      this.landing = !this.landing;
       this.willys = !this.willys;
+    },
+    toggleMaxi() {
+      this.landing = !this.landing;
+      this.maxi = !this.maxi;
     },
     toggleShow() {
       this.show = !this.show;
