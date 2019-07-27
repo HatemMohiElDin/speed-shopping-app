@@ -285,6 +285,7 @@ export default {
 
     sortItems() {
       this.userList.forEach(item => {
+        item = item.toLowerCase()
         if (this.diaryItems.includes(item)) {
           this.userDiary.push(item);
         } else if (this.veggieItems.includes(item)) {
